@@ -7,8 +7,8 @@ before_cache:
 - rm - fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   directories:
-   - $HOME/.gradle/caches
-   - $HOME/.gradle/wrapper/
+  - $HOME/.gradle/caches
+  - $HOME/.gradle/wrapper/
 
 
 android:
@@ -27,9 +27,9 @@ before_install:
 - yes | sdkmanager "platforms;android-28"
 
 script:
-  - ./gradlew clean
-  - ./gradlew assembleDebug
-  - ./gradlew assembleDebugAndroidTest
+ - ./gradlew clean
+ - ./gradlew assembleDebug
+ - ./gradlew assembleDebugAndroidTest
 
  
 deploy:
@@ -41,4 +41,4 @@ deploy:
   on:
     branches:   
       only:     
-- master 
+       - master 
