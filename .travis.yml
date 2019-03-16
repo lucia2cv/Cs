@@ -27,9 +27,9 @@ before_install:
 - yes | sdkmanager "platforms;android-28"
 
 script:
-- ./gradlew clean
-- ./gradlew assembleDebug
-- ./gradlew assembleDebugAndroidTest
+  - ./gradlew clean
+  - ./gradlew assembleDebug
+  - ./gradlew assembleDebugAndroidTest
 
  
 deploy:
