@@ -50,8 +50,10 @@ script:
  - ./gradlew clean 
  - ./gradlew assembleDebug
  - ./gradlew assembleDebugAndroidTest
- - sonar-scanner
  - ./gradlew sonarqube
+ - sonar-scanner
+
+ 
  
  
 deploy:
