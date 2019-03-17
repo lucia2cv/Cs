@@ -51,6 +51,7 @@ script:
  - ./gradlew assembleDebug
  - ./gradlew assembleDebugAndroidTest
  - ./gradlew sonarqube
+ - ./gradle build
  - sonar-scanner
 
 deploy:
