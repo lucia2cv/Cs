@@ -1,7 +1,7 @@
 sudo: false
 language: android
 jdk: oraclejdk8
-
+gem: install travis
 before_cache:
 - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 - rm - fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -50,7 +50,7 @@ deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
   file:
-    - "app/"
+    - "app"
   skip_cleanup: true
   on:
     tags: false
