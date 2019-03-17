@@ -39,6 +39,5 @@ deploy:
     - "app/**"
   skip_cleanup: true
   on:
-    branches:   
-      only:     
-       - master 
+    tags: false
+   
