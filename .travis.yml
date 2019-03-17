@@ -51,12 +51,8 @@ script:
  - ./gradlew assembleDebug
  - ./gradlew assembleDebugAndroidTest
  - ./gradlew sonarqube
+ - sonar-scanner
 
-
-
- 
- 
- 
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
