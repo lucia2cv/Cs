@@ -52,6 +52,9 @@ script:
  - ./gradlew assembleDebugAndroidTest
  - ./gradlew sonarqube
  - sonar-scanner
+ -Dsonar.projectKey=lucia2cv_Cs
+ -Dsonar.sources=. 
+ -Dsonar.java.binaries=.
 
  
  
