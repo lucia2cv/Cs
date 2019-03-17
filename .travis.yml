@@ -9,6 +9,7 @@ cache:
   directories:
   - $HOME/.gradle/caches
   - $HOME/.gradle/wrapper/
+  -$HOME/.sonar/cache
 env:
   global:
    - ANDROID_API_LEVEL=25
@@ -32,7 +33,12 @@ android:
   - addon-google_apis-google-$EMULATOR_API_LEVEL
   - sys-img-armeabi-v7a-addon-google_apis-google-$ANDROID_API_LEVEL
   - sys-img-armeabi-v7a-addon-google_apis-google-$EMULATOR_API_LEVEL
-
+addons:
+ sonarcloud:
+  organization: lucia2cv-github
+  token:
+   secure: 0158b039beffc7a2f0641ff9c84817b829cbd5cc
+   
 before_deploy:
 - cd -
 
@@ -44,7 +50,7 @@ script:
  - ./gradlew clean
  - ./gradlew assembleDebug
  - ./gradlew assembleDebugAndroidTest
-
+ - sonar-scanner
  
 deploy:
   provider: releases
