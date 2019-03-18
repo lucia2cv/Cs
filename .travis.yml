@@ -53,7 +53,7 @@ script:
  - ./gradlew assembleDebugAndroidTest
  - ./gradlew sonarqube
 
- - sonar-scanner
+ 
 
 deploy:
   provider: releases
