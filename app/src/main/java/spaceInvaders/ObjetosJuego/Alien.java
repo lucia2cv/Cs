@@ -17,6 +17,7 @@ import spaceInvaders.SpaceInvadersJuego;
 
 public class Alien extends ObjetoVisible {
 
+
     public enum Estado {Izquierda, Derecha}
 
     private Bitmap bitmap;
@@ -232,6 +233,10 @@ public class Alien extends ObjetoVisible {
                 color="Verde";
                 break;
         }
+    }
+
+    public String getColor() {
+        return color;
     }
 
 
