@@ -235,9 +235,7 @@ public class Alien extends ObjetoVisible {
         }
     }
 
-    public String getColor() {
-        return color;
-    }
+
 
 
 }
