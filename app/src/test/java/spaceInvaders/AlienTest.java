@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Point;
 
 
+import spaceInvaders.Activities.MayorActivity;
 import spaceInvaders.ObjetosJuego.Alien;
 
 import org.junit.Before;
@@ -16,24 +17,25 @@ import static org.junit.Assert.*;
 
 public class AlienTest {
     private Alien alien;
-    private Context context;
-    private Point point;
-    private boolean mayor;
-    private boolean rebotes;
-    private Activity activity;
-    private String nombre;
+    private Point point = new Point();
+    private boolean mayor= true;
+    private boolean rebotes= false;
+    private Activity activity = new MayorActivity();
+    private Context context = activity;
+    private String nombre= "hola";
 
-    private int fila;
-    private int columna;
-    private int screenX;
-    private int screenY;
-    private float velocidad;
+    private int fila = 0;
+    private int columna = 0;
+    private int screenX = point.x;
+    private int screenY = point.y;
+    private float velocidad = 80.0f;
+
 
 
     @Before
     public void setUp() throws Exception {
 
-        SpaceInvadersJuego sij = null; //new SpaceInvadersJuego(context,point,mayor,rebotes,activity,nombre);
+        SpaceInvadersJuego sij = new SpaceInvadersJuego(context,point,mayor,rebotes,activity,nombre);
         alien= new Alien(context,fila,columna, screenX,screenY,sij,mayor,velocidad);
     }
     @After
@@ -43,15 +45,15 @@ public class AlienTest {
 
     @Test
     public void alienColor() {
-        String color;
+        String colorInicial;
         String colorFinal;
 
-        alien.setColor("verde");
-        color = alien.getColor();
+        alien.setColor("Verde");
+        colorInicial = alien.getColor();
         alien.cambiarColor();
         colorFinal = alien.getColor();
 
-        boolean funciona = (!color.equals(colorFinal));
+        boolean funciona = (!colorInicial.equals(colorFinal));
 
         assertTrue(funciona);
 
