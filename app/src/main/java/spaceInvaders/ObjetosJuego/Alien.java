@@ -97,46 +97,39 @@ public class Alien extends ObjetoVisible {
 
     @Override //ObjetoVisible
     public void update() {
+        PointF loc = getPosition();
+        loc = getPosition();
         if (activo) {
-
-            PointF loc = getPosition();
-            if (estado == Estado.Izquierda) {
-                loc.x = loc.x - velocidad;
-            } else if (estado == Estado.Derecha) {
-                loc.x = loc.x + velocidad;
-            }
-
-            setPosition(loc.x, loc.y);
+            regularPosicionYVelocidad();
             loc = getPosition();
 
+            //Linea inncecesaria
            // Nave nave = (Nave) spaceInvadersJuego.getControladorObjetos().get("nave");
 
-            // disparo random
-            if ((this.mayor) && (((int) (Math.random() * prob)) == ((int) (Math.random() * prob))) && (activo)) {
-                spaceInvadersJuego.disparar(loc.x + (getLength() / 2), loc.y, false);
-            }
 
             // aliens llegan abajo
-            if (this.activo) {
-                /*for (int i = 0; i < spaceInvadersJuego.getNumBarrera(); i++) {
-                    Barrera barrera = (Barrera) spaceInvadersJuego.getControladorObjetos().get("barrera" + i);
-                    if (barrera.activo()) {
-                        if (RectF.intersects(barrera.getBoundingRect(), getBoundingRect())) {
-                            barrera.setInvisible();
-                        }
-                    }
-                }*/
-                if (loc.y > (screenY - ((screenY / 34) * 10))) {
-                    // spaceInvadersJuego.reiniciar();
-                    spaceInvadersJuego.mostrarPuntuacionFin();
 
-                }
+            //Bucle que impide que el test funcione
+            /*for (int i = 0; i < spaceInvadersJuego.getNumBarrera(); i++) {
+                   Barrera barrera = (Barrera) spaceInvadersJuego.getControladorObjetos().get("barrera" + i);
+                   if (barrera.activo()&& RectF.intersects(barrera.getBoundingRect(), getBoundingRect())) {
+                           barrera.setInvisible();
+                       }
+             }*/
+
+            if (loc.y > (screenY - ((screenY / 34) * 10))) {
+                    spaceInvadersJuego.mostrarPuntuacionFin();
             }
+
 
             // Borde de la pantalla
             if ((loc.x > (screenX - ((getLength() + padding) * (6 - columna)))) || (loc.x < ((getLength() + padding) * columna))) {
                 mediaVuelta();
             }
+        }
+        // disparo random
+        if ((this.mayor) && (((int) (Math.random() * prob)) == ((int) (Math.random() * prob))) && (activo)) {
+            spaceInvadersJuego.disparar(loc.x + (getLength() / 2), loc.y, false);
         }
 
     }
@@ -279,5 +272,21 @@ public class Alien extends ObjetoVisible {
 
     public void setActivo(boolean activo){
         this.activo=activo;
+    }
+
+
+    public void regularPosicionYVelocidad(){
+        PointF loc = getPosition();
+        if (estado == Estado.Izquierda) {
+            loc.x = loc.x - velocidad;
+        } else if (estado == Estado.Derecha) {
+            loc.x = loc.x + velocidad;
+        }
+
+        setPosition(loc.x, loc.y);
+    }
+
+    public void disparoRandom(){
+
     }
 }
