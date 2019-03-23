@@ -44,46 +44,6 @@ public class Nave extends ObjetoVisible {
 
     private Context context;
 
-    public Nave(Context context, int screenX, int screenY, float velocidad) {
-
-        sonido = MediaPlayer.create(context, R.raw.teletransporte);
-
-        this.context=context;
-
-        activo = true;
-
-        // dimensions of object
-        int length;
-        int height;
-
-        // position of object
-        float x;
-        float y;
-
-        this.screenX = screenX;
-        this.screenY = screenY;
-
-        length = screenX / 15;
-        height = screenX / 18;
-
-        x = ((screenX / 2) - (height / 2));
-        y = (screenY - ((screenY / 44) * 10));
-
-        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.nave1);
-        bitmap = Bitmap.createScaledBitmap(bitmap, length, height, false);
-
-        setSize(length, height);
-        setPosicionInicial(x, y);
-
-        this.velocidad = (velocidad / 7);
-
-        estadoNave = EstadoNave.Parada;
-
-
-        navepaint = new Paint();
-        navepaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.verde), PorterDuff.Mode.SRC_IN));
-        color="verde";
-    }
     public Nave(Context context, int screenX, int screenY, float velocidad, SpaceInvadersJuego sij) {
 
         this.spaceInvadersJuego = sij;

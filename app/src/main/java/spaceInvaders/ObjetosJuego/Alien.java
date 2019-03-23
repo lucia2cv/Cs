@@ -8,7 +8,6 @@ import android.graphics.Paint;
 import android.graphics.PointF;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
 import android.support.v4.content.ContextCompat;
 
 import com.spaceInvaders.android.R;
@@ -47,9 +46,14 @@ public class Alien extends ObjetoVisible {
     private final int prob = 3000; //Probabilidad de disparo random
 
 
-    public Alien(Context context) {
+
+
+
+
+    public Alien(Context context, boolean act) {
         this.context = context;
-        alienPaint = new Paint();
+        this.setActivo(act);
+
     }
 
     public Alien(Context context, int fila, int columna, int screenX, int screenY, SpaceInvadersJuego sij, boolean mayor, float velocidad) {
@@ -105,7 +109,7 @@ public class Alien extends ObjetoVisible {
             setPosition(loc.x, loc.y);
             loc = getPosition();
 
-            Nave nave = (Nave) spaceInvadersJuego.getControladorObjetos().get("nave");
+           // Nave nave = (Nave) spaceInvadersJuego.getControladorObjetos().get("nave");
 
             // disparo random
             if ((this.mayor) && (((int) (Math.random() * prob)) == ((int) (Math.random() * prob))) && (activo)) {
@@ -114,14 +118,14 @@ public class Alien extends ObjetoVisible {
 
             // aliens llegan abajo
             if (this.activo) {
-                for (int i = 0; i < spaceInvadersJuego.getNumBarrera(); i++) {
+                /*for (int i = 0; i < spaceInvadersJuego.getNumBarrera(); i++) {
                     Barrera barrera = (Barrera) spaceInvadersJuego.getControladorObjetos().get("barrera" + i);
                     if (barrera.activo()) {
                         if (RectF.intersects(barrera.getBoundingRect(), getBoundingRect())) {
                             barrera.setInvisible();
                         }
                     }
-                }
+                }*/
                 if (loc.y > (screenY - ((screenY / 34) * 10))) {
                     // spaceInvadersJuego.reiniciar();
                     spaceInvadersJuego.mostrarPuntuacionFin();
@@ -255,5 +259,25 @@ public class Alien extends ObjetoVisible {
 
     public Estado getEstado() {
         return this.estado;
+    }
+
+    public int getScreenX(){
+        return screenX;
+    }
+
+    public int getScreenY(){
+        return screenY;
+    }
+
+    public int getPadding() {
+        return padding;
+    }
+
+    public int getColumna() {
+        return columna;
+    }
+
+    public void setActivo(boolean activo){
+        this.activo=activo;
     }
 }

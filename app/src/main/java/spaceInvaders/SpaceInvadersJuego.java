@@ -13,18 +13,16 @@ import android.view.SurfaceView;
 
 import com.spaceInvaders.android.R;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import spaceInvaders.Activities.PuntuacionActivity;
 import spaceInvaders.ObjetosJuego.Alien;
 import spaceInvaders.ObjetosJuego.AlienEspecial;
 import spaceInvaders.ObjetosJuego.Barrera;
 import spaceInvaders.ObjetosJuego.Botones;
-import spaceInvaders.ObjetosJuego.Nave;
-import spaceInvaders.Activities.PuntuacionActivity;
 import spaceInvaders.ObjetosJuego.Disparo;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-
-import static android.app.Activity.RESULT_OK;
+import spaceInvaders.ObjetosJuego.Nave;
 
 public class SpaceInvadersJuego extends SurfaceView implements Runnable {
 
@@ -304,5 +302,9 @@ public class SpaceInvadersJuego extends SurfaceView implements Runnable {
 
     public Nave getNave() {
         return this.nave;
+    }
+
+    public void setNumBarrera(int i) {
+        this.numBarrera = i;
     }
 }
