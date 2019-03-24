@@ -12,6 +12,8 @@ import android.support.v4.content.ContextCompat;
 
 import com.spaceInvaders.android.R;
 
+import java.util.Random;
+
 import spaceInvaders.SpaceInvadersJuego;
 
 
@@ -134,7 +136,10 @@ public class Alien extends ObjetoVisible {
             }
 
             // disparo random
-            if ((this.mayor) && (((int) (Math.random() * prob)) == ((int) (Math.random() * prob)))) {
+            Random r = new Random();
+            int rand1 = r.nextInt(prob);
+            int rand2 = r.nextInt(prob);
+            if ((this.mayor) && (rand1 == rand2)) {
                 spaceInvadersJuego.disparar(loc.x + (getLength() / 2), loc.y, false);
             }
         }
