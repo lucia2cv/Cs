@@ -302,4 +302,7 @@ public class SpaceInvadersJuego extends SurfaceView implements Runnable {
     }
 
 
+    public Nave getNave() {
+        return this.nave;
+    }
 }

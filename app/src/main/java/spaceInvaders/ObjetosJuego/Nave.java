@@ -6,8 +6,11 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PointF;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.media.MediaPlayer;
+import android.support.v4.content.ContextCompat;
 
 import com.spaceInvaders.android.R;
 import spaceInvaders.SpaceInvadersJuego;
@@ -20,6 +23,7 @@ public class Nave extends ObjetoVisible {
     // velocity of object
     private float velocidad;
 
+
     public enum EstadoNave {Parada, Izquierda, Derecha, Arriba, Abajo}
 
     //Estado de la nave
@@ -31,10 +35,55 @@ public class Nave extends ObjetoVisible {
 
     private final int prob = 400;
 
+    private Paint navepaint;
+    private String color;
+
     private boolean activo;
 
     private MediaPlayer sonido;
 
+    private Context context;
+
+    public Nave(Context context, int screenX, int screenY, float velocidad) {
+
+        sonido = MediaPlayer.create(context, R.raw.teletransporte);
+
+        this.context=context;
+
+        activo = true;
+
+        // dimensions of object
+        int length;
+        int height;
+
+        // position of object
+        float x;
+        float y;
+
+        this.screenX = screenX;
+        this.screenY = screenY;
+
+        length = screenX / 15;
+        height = screenX / 18;
+
+        x = ((screenX / 2) - (height / 2));
+        y = (screenY - ((screenY / 44) * 10));
+
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.nave1);
+        bitmap = Bitmap.createScaledBitmap(bitmap, length, height, false);
+
+        setSize(length, height);
+        setPosicionInicial(x, y);
+
+        this.velocidad = (velocidad / 7);
+
+        estadoNave = EstadoNave.Parada;
+
+
+        navepaint = new Paint();
+        navepaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.verde), PorterDuff.Mode.SRC_IN));
+        color="verde";
+    }
     public Nave(Context context, int screenX, int screenY, float velocidad, SpaceInvadersJuego sij) {
 
         this.spaceInvadersJuego = sij;
@@ -69,6 +118,11 @@ public class Nave extends ObjetoVisible {
         this.velocidad = (velocidad / 7);
 
         estadoNave = EstadoNave.Parada;
+
+
+        navepaint = new Paint();
+        navepaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.verde), PorterDuff.Mode.SRC_IN));
+        color="verde";
     }
 
     @Override
@@ -156,6 +210,25 @@ public class Nave extends ObjetoVisible {
 
     public void setInvisible() {
         activo = false;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return this.color;
+    }
+
+
+    public void cambiarColor() {
+        if(color.equals("verde")){
+            navepaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.morado), PorterDuff.Mode.SRC_IN));
+            color="morado";
+        }else{
+            navepaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.verde), PorterDuff.Mode.SRC_IN));
+            color="verde";
+        }
     }
 
     @Override
