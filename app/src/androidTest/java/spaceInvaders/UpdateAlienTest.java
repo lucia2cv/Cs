@@ -40,7 +40,7 @@ public class UpdateAlienTest {
         alien.setPosition(loc.x,loc.y);
 
 
-        alien.setEstado(Alien.Estado.Derecha);
+        alien.setEstado(Alien.Estado.DERECHA);
 
         estadoInicial = alien.getEstado();
         alien.update();
