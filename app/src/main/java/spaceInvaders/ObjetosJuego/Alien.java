@@ -132,10 +132,11 @@ public class Alien extends ObjetoVisible {
             if ((loc.x > (screenX - ((getLength() + padding) * (6 - columna)))) || (loc.x < ((getLength() + padding) * columna))) {
                 mediaVuelta();
             }
-        }
-        // disparo random
-        if ((this.mayor) && (((int) (Math.random() * prob)) == ((int) (Math.random() * prob))) && (activo)) {
-            spaceInvadersJuego.disparar(loc.x + (getLength() / 2), loc.y, false);
+
+            // disparo random
+            if ((this.mayor) && (((int) (Math.random() * prob)) == ((int) (Math.random() * prob)))) {
+                spaceInvadersJuego.disparar(loc.x + (getLength() / 2), loc.y, false);
+            }
         }
 
     }
