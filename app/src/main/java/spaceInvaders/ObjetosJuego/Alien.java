@@ -56,6 +56,9 @@ public class Alien extends ObjetoVisible {
     private static final String COLOR_6 = "Blanco";
     private static final String COLOR_7 = "Naranja";
 
+    //Variable random
+    Random r = new Random();
+
 
 
 
@@ -136,7 +139,6 @@ public class Alien extends ObjetoVisible {
             }
 
             // disparo random
-            Random r = new Random();
             int rand1 = r.nextInt(prob);
             int rand2 = r.nextInt(prob);
             if ((this.mayor) && (rand1 == rand2)) {
@@ -221,7 +223,7 @@ public class Alien extends ObjetoVisible {
 
     public void cambiarColorRandom() {
         colorRandom = true;
-        int c = (int) (Math.random() * 7);
+        int c = r.nextInt(7);
         switch (c) {
             case 0:
                 alienPaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.morado), PorterDuff.Mode.SRC_IN));
