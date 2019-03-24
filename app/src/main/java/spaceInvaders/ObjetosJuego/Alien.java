@@ -37,6 +37,7 @@ public class Alien extends ObjetoVisible {
     private int columna;
     private int padding;
 
+    //caracteristicas
     private int length;
     private int height;
     private String color;
