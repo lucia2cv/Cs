@@ -22,7 +22,7 @@ plugins {
 
 sonarqube {
     properties {
-        property 'sonar.projectName', 'Example of SonarQube Scanner for Gradle Usage'
+        property 'sonar.projectName', 'Cs'
     }
 }
 

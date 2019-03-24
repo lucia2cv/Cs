@@ -42,6 +42,7 @@ addons:
 before_deploy:
 - cd -
 
+
 before_install:
 - chmod +x gradlew
 - yes | sdkmanager "platforms;android-28"
@@ -51,7 +52,8 @@ script:
  - ./gradlew assembleDebug
  - ./gradlew assembleDebugAndroidTest
  - ./gradlew sonarqube
- - sonar-scanner
+
+ 
 
 deploy:
   provider: releases
