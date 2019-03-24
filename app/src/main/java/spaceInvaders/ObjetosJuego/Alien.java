@@ -12,6 +12,7 @@ import android.graphics.RectF;
 import android.support.v4.content.ContextCompat;
 
 import com.spaceInvaders.android.R;
+
 import spaceInvaders.SpaceInvadersJuego;
 
 
@@ -46,7 +47,12 @@ public class Alien extends ObjetoVisible {
     private final int prob = 3000; //Probabilidad de disparo random
 
 
-    public Alien(Context context, int fila, int columna, int screenX, int screenY, SpaceInvadersJuego sij, boolean mayor, float velocidad){
+    public Alien(Context context) {
+        this.context = context;
+        alienPaint = new Paint();
+    }
+
+    public Alien(Context context, int fila, int columna, int screenX, int screenY, SpaceInvadersJuego sij, boolean mayor, float velocidad) {
 
         this.mayor = mayor;
         this.context = context;
@@ -86,7 +92,7 @@ public class Alien extends ObjetoVisible {
     }
 
     @Override //ObjetoVisible
-    public void update (){
+    public void update() {
         if (activo) {
 
             PointF loc = getPosition();
@@ -132,15 +138,15 @@ public class Alien extends ObjetoVisible {
     }
 
     @Override
-    public void draw (Canvas canvas, Paint paint){
-        if (activo){
+    public void draw(Canvas canvas, Paint paint) {
+        if (activo) {
             PointF loc = getPosition();
             canvas.drawBitmap(bitmap, loc.x, loc.y, alienPaint);
         }
     }
 
-    public void mediaVuelta(){
-        if (estado == Estado.Izquierda){
+    public void mediaVuelta() {
+        if (estado == Estado.Izquierda) {
             estado = Estado.Derecha;
             spaceInvadersJuego.generarAlienEspecial();
         } else {
@@ -151,21 +157,21 @@ public class Alien extends ObjetoVisible {
         setPosition(loc.x, loc.y);
     }
 
-    public void setInvisible(){
+    public void setInvisible() {
         this.spaceInvadersJuego.alienMuere(false);
         activo = false;
     }
 
     @Override
-    public boolean activo(){
+    public boolean activo() {
         return activo;
     }
 
-    public void cambiarColor(){
+    public void cambiarColor() {
         if (colorRandom) {
             colorRandom = false;
             alienPaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.verde), PorterDuff.Mode.SRC_IN));
-            color="Verde";
+            color = "Verde";
         } else {
             switch (this.color) {
                 case "Verde":
@@ -200,42 +206,54 @@ public class Alien extends ObjetoVisible {
         }
     }
 
-    public void cambiarColorRandom(){
+    public void cambiarColorRandom() {
         colorRandom = true;
-        int c = (int)(Math.random() * 7);
-        switch (c){
+        int c = (int) (Math.random() * 7);
+        switch (c) {
             case 0:
                 alienPaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.morado), PorterDuff.Mode.SRC_IN));
-                color="Morado";
+                color = "Morado";
                 break;
             case 1:
                 alienPaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.amarillo), PorterDuff.Mode.SRC_IN));
-                color="Amarillo";
+                color = "Amarillo";
                 break;
             case 2:
                 alienPaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.azul), PorterDuff.Mode.SRC_IN));
-                color="Azul";
+                color = "Azul";
                 break;
             case 3:
                 alienPaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.rosa), PorterDuff.Mode.SRC_IN));
-                color="Rosa";
+                color = "Rosa";
                 break;
             case 4:
                 alienPaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.blanco), PorterDuff.Mode.SRC_IN));
-                color="Blanco";
+                color = "Blanco";
                 break;
             case 5:
                 alienPaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.naranja), PorterDuff.Mode.SRC_IN));
-                color="Naranja";
+                color = "Naranja";
                 break;
             default:
                 alienPaint.setColorFilter(new PorterDuffColorFilter(ContextCompat.getColor(context, R.color.verde), PorterDuff.Mode.SRC_IN));
-                color="Verde";
+                color = "Verde";
                 break;
         }
     }
 
+    public void setColor(String color) {
+        this.color = color;
+    }
 
+    public String getColor() {
+        return this.color;
+    }
 
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
 
+    public Estado getEstado() {
+        return this.estado;
+    }
 }
