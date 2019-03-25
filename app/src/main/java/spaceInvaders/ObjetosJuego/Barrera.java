@@ -30,7 +30,7 @@ public class Barrera extends ObjetoVisible {
 
         this.id = id;
 
-        setSize(width - 2 * padding, height - 2 * padding);
+        setSize(width - 2f * padding, height - 2f * padding);
         setPosicionInicial((columna * width) + padding + (separacionBloques * numBloque) +
                 separacionBloques + (separacionBloques * numBloque), fila * height + padding +
                 startHeight);
