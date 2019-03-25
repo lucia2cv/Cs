@@ -70,6 +70,11 @@ public class Alien extends ObjetoVisible {
         this.setActivo(act);
 
     }
+    public Alien(Context context) {
+        this.context = context;
+        alienPaint = new Paint();
+    }
+
 
     public Alien(Context context, int fila, int columna, int screenX, int screenY, SpaceInvadersJuego sij, boolean mayor, float velocidad) {
 
