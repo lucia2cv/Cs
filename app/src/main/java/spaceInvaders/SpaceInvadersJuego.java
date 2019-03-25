@@ -301,5 +301,7 @@ public class SpaceInvadersJuego extends SurfaceView implements Runnable {
         return rebotes;
     }
 
-
+    public Nave getNave() {
+        return nave;
+    }
 }
