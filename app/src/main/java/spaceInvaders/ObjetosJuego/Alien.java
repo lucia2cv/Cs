@@ -46,7 +46,7 @@ public class Alien extends ObjetoVisible {
     private boolean mayor;
     private Context context;
 
-    private static final int prob = 3000; //Probabilidad de disparo random
+    private static final int prob = 4000; //Probabilidad de disparo random
 
     //Colores
     private static final String COLOR_1 = "Verde";
