@@ -151,6 +151,7 @@ public class Disparo extends ObjetoVisible {
                     for (Alien alien : spaceInvadersJuego.getAliens()) {
                         alien.cambiarColor();
                     }
+                    spaceInvadersJuego.getNave().cambiarColor();
                 }
                 spaceInvadersJuego.ultimoChoqueBarrera = 0;
 
