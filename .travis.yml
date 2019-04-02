@@ -49,10 +49,11 @@ before_install:
 - yes | sdkmanager "platforms;android-28"
 
 script:
+ - ./gradlew build
  - ./gradlew clean 
  - ./gradlew assembleDebug
  - ./gradlew assembleDebugAndroidTest
- - ./gradlew build
+
  - ./gradlew sonarqube
  
 
