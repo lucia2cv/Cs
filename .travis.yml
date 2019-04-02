@@ -51,6 +51,7 @@ before_install:
 
 script:
  - ./gradlew clean 
+ - ./gradlew assembleRelease
  - ./gradlew assembleDebug
  - ./gradlew assembleDebugAndroidTest
  - ./gradlew sonarqube 
