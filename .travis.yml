@@ -63,4 +63,4 @@ deploy:
   skip_cleanup: true
   on:
     repo: lucia2cv/Cs
-    tags: true
+    tags: false
