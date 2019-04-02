@@ -41,7 +41,7 @@ addons:
    secure: 0158b039beffc7a2f0641ff9c84817b829cbd5cc
    
 before_deploy:
-- cd -
+- cd app/**
 
 
 before_install:
@@ -58,7 +58,7 @@ deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
   file: 
-   - app/*
+   - app/**
   skip_cleanup: true
   on:
     repo: lucia2cv/Cs
