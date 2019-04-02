@@ -57,13 +57,13 @@ script:
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
-  file: 
-   - "app/**"
+  file_glob: true
+  file: app/*
   skip_cleanup: true
   on:
-    tags: false
+    tags: true
     repo: lucia2cv/Cs
     branches:
      only:
       - master
-      - /v\d+\.\d+[a-z]/
+     
