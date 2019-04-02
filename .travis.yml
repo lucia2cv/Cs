@@ -61,6 +61,7 @@ deploy:
    - "app/**"
   skip_cleanup: true
   on:
+    tags: false
     repo: lucia2cv/Cs
     branches:
      only:
