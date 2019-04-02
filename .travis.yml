@@ -51,20 +51,16 @@ before_install:
 
 script:
  - ./gradlew clean 
- - ./gradlew build assembleRelease
  - ./gradlew assembleDebug
  - ./gradlew assembleDebugAndroidTest
  - ./gradlew sonarqube 
 deploy:
   provider: releases
-  api_key: $GITHUB_TOKEN
+  api_key: 
+   $GITHUB_TOKEN
   file_glob: true
   file: app/*
   skip_cleanup: true
   on:
-    tags: true
     repo: lucia2cv/Cs
-    branches:
-     only:
-      - master
-     
+    tags: true
