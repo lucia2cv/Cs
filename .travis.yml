@@ -42,7 +42,8 @@ deploy:
  provider: releases
  api_key: $GITHUB_TOKEN
  file: 
-  - "app/**"
+  - "app/*"
  skip_cleanup: true
  on:
-  tags: false
+ repo: lucia2cv/Cs
+  tags: true
