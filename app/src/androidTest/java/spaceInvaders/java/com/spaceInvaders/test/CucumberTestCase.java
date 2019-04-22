@@ -1,4 +1,4 @@
-package spaceInvaders.assets.java.com.spaceInvader.test;
+package spaceInvaders.java.com.spaceInvaders.test;
 
 
 import cucumber.api.CucumberOptions;
@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 @CucumberOptions(
         features = {"features"},
         plugin = {"pretty"},
-        glue = {"com.spaceInvaders"},
+        glue = {"com.spaceInvaders.test"},
         tags = {"@e2e", "@smoke"}
 )
 @SuppressWarnings("unused")

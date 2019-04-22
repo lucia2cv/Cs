@@ -1,4 +1,4 @@
-package spaceInvaders.assets.java.com.spaceInvader.test;
+package spaceInvaders.java.com.spaceInvaders.test;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -6,10 +6,10 @@ import cucumber.api.java.en.When;
 import spaceInvaders.ObjetosJuego.Barrera;
 import spaceInvaders.ObjetosJuego.Disparo;
 
-import static spaceInvaders.assets.java.com.spaceInvader.test.juegoSteps.nave;
-import static spaceInvaders.assets.java.com.spaceInvader.test.juegoSteps.sij;
-import static spaceInvaders.assets.java.com.spaceInvader.test.juegoSteps.bala;
-import static spaceInvaders.assets.java.com.spaceInvader.test.juegoSteps.alien;
+import static spaceInvaders.java.com.spaceInvaders.test.juegoSteps.nave;
+import static spaceInvaders.java.com.spaceInvaders.test.juegoSteps.sij;
+import static spaceInvaders.java.com.spaceInvaders.test.juegoSteps.bala;
+import static spaceInvaders.java.com.spaceInvaders.test.juegoSteps.alien;
 
 import static org.junit.Assert.assertTrue;
 

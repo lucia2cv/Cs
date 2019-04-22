@@ -1,4 +1,4 @@
-package spaceInvaders.assets.java.com.spaceInvader.test;
+package spaceInvaders.java.com.spaceInvaders.test;
 
 import android.os.Bundle;
 import android.support.test.runner.MonitoringInstrumentation;

@@ -1,10 +1,9 @@
-package spaceInvaders.assets.java.com.spaceInvader.test;
+package spaceInvaders.java.com.spaceInvaders.test;
 
 import android.graphics.Point;
 import android.support.test.InstrumentationRegistry;
 
 import android.content.Context;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
@@ -23,7 +22,7 @@ public class juegoSteps {
     static Alien alien;
     static Nave nave;
     Point point = new Point();
-    private MayorActivity MayorActivity;
+    private MayorActivity MayorActivity = new MayorActivity();
 
     @Given("^I am playing$")
     public void I_am_playing(){

@@ -1,17 +1,12 @@
-package spaceInvaders.assets.java.com.spaceInvader.test;
+package spaceInvaders.java.com.spaceInvaders.test;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.support.test.rule.ActivityTestRule;
-import android.view.View;
-import android.widget.EditText;
 
 import com.spaceInvaders.android.R;
 
-import org.hamcrest.Description;
-import org.hamcrest.Matcher;
 import org.junit.Rule;
-import org.junit.internal.matchers.TypeSafeMatcher;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -25,7 +20,6 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static junit.framework.Assert.assertNotNull;
