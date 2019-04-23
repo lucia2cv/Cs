@@ -32,13 +32,13 @@ public class IniciarActivitySteps {
 
     private Activity activity;
 
-    @Before("@main-feature")
+    @Before("@smoke")
     public void setup() {
         activityTestRule.launchActivity(new Intent());
         activity = activityTestRule.getActivity();
     }
 
-    @After("@main-feature")
+    @After("@smoke")
     public void tearDown() {
         activityTestRule.finishActivity();
     }
