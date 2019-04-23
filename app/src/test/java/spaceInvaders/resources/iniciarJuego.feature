@@ -1,7 +1,6 @@
 Feature: Start a new game
 
-    @smoke
-    @e2e
+
     Scenario :Start a new game
         Given I am on main screen
         When I input name "<name>"
