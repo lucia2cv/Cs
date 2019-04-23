@@ -4,6 +4,8 @@ jdk: oraclejdk8
 before_cache:
 - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+- r features/support
+- r features/step_definitions
 cache:
  directories:
  - $HOME/.gradle/caches
@@ -34,12 +36,7 @@ android:
 before_install:
 - chmod +x gradlew
 - yes | sdkmanager "platforms;android-28"
-- sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-- sudo apt-get update -q
-- sudo apt-get install gcc-4.8 -y
 script:
-- r features/support
-- r features/step_definitions
 - ./gradlew clean
 - ./gradlew assembleDebug
 - ./gradlew assembleDebugAndroidTest
