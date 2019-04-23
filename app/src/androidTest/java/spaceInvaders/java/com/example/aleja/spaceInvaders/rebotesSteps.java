@@ -1,7 +1,7 @@
-package spaceInvaders.java.com.spaceInvaders.test;
+package spaceInvaders.java.com.example.aleja.spaceInvaders;
 
 import cucumber.api.java.en.Then;
-import static spaceInvaders.java.com.spaceInvaders.test.juegoSteps.sij;
+import static spaceInvaders.java.com.example.aleja.spaceInvaders.juegoSteps.sij;
 import static org.junit.Assert.assertTrue;
 
 

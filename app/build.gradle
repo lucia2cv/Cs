@@ -23,6 +23,8 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         testApplicationId "java.com.spaceInvader.test"
         testInstrumentationRunner "java.com.spaceInvader.test.Instrumentation"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
     sourceSets {
         androidTest {

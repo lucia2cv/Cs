@@ -1,4 +1,4 @@
-package spaceInvaders.java.com.spaceInvaders.test;
+package spaceInvaders.java.com.example.aleja.spaceInvaders;
 
 import android.app.Activity;
 import android.content.Intent;

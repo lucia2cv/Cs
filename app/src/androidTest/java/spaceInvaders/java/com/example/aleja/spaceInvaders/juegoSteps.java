@@ -1,4 +1,4 @@
-package spaceInvaders.java.com.spaceInvaders.test;
+package spaceInvaders.java.com.example.aleja.spaceInvaders;
 
 import android.graphics.Point;
 import android.support.test.InstrumentationRegistry;
