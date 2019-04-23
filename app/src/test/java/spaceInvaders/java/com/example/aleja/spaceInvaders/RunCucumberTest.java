@@ -1,4 +1,4 @@
-package spaceInvaders.java.com.spaceInvader;
+package spaceInvaders.java.com.example.aleja.spaceInvaders;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
