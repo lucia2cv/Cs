@@ -36,6 +36,7 @@ android:
 before_install:
 - chmod +x gradlew
 - yes | sdkmanager "platforms;android-28"
+- sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 script:
 - ./gradlew clean
 - ./gradlew assembleDebug
