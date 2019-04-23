@@ -7,6 +7,9 @@
     <string name="title_activity_mayor">MayorActivity</string>
     <string name="title_activity_menor">MenorActivity</string>
 
+    <string name="msg_age_error">Please enter your age</string>
+    <string name="msg_name_error">Please enter your name</string>
+
     <string name="alien">alien</string>
     <string name="nave">nave</string>
 
