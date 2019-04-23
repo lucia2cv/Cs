@@ -38,11 +38,12 @@ before_install:
 - sudo apt-get update -q
 - sudo apt-get install gcc-4.8 -y
 script:
+- r features/support
+- r features/step_definitions
 - ./gradlew clean
 - ./gradlew assembleDebug
 - ./gradlew assembleDebugAndroidTest
-- r features/support
-- r features/step_definitions
+
 deploy:
  provider: releases
  api_key: $GITHUB_TOKEN
